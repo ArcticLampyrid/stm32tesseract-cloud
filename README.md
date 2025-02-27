@@ -1,8 +1,13 @@
+# STM32Tesseract-Cloud
+A serverless cloud for [STM32Tesseract](https://stm32tesseract.alampy.com/) that uses Cloudflare Workers.
+
+## Development
 ```
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
+## Deployment
 ```
-npm run deploy
+pnpm run deploy
 ```
