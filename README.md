@@ -1,5 +1,11 @@
 # STM32Tesseract-Cloud
-A serverless cloud for [STM32Tesseract](https://stm32tesseract.alampy.com/) that uses Cloudflare Workers.
+A serverless cloud for [STM32Tesseract](https://stm32tesseract.alampy.com/) that uses Cloudflare Workers, contains homepage, documentation and Campanula server.
+
+## Stack
+- [Cloudflare Workers](https://workers.cloudflare.com/) as serverless platform
+- [Cloudflare KV](https://developers.cloudflare.com/kv/) as key-value storage
+- [Hono](https://hono.dev/) as serverless backend framework
+- [Docusaurus](https://docusaurus.io/) as content-driven frontend generator
 
 ## Development
 ```
