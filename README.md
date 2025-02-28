@@ -9,6 +9,7 @@ A serverless cloud for [STM32Tesseract](https://stm32tesseract.alampy.com/) that
 
 ## Development
 ```
+echo "POW_SIGN_KEY=<your key>" > .dev.vars
 pnpm install
 pnpm run dev
 ```
