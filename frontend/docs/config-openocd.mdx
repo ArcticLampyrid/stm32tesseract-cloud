@@ -1,0 +1,17 @@
+---
+sidebar_position: 6
+---
+
+# Configure OpenOCD
+The default OpenOCD configuration is set for CMSIS-DAP. ST-Link users need to modify `openocd.cfg`.
+
+Replace:
+```cfg
+source [find interface/cmsis-dap.cfg] # CMSIS-DAP
+```
+With one of the following, depending on your ST-Link version:
+```cfg
+source [find interface/stlink.cfg] # ST-Link V1
+source [find interface/stlink-v2.cfg] # ST-Link V2
+source [find interface/stlink-v3.cfg] # ST-Link V3
+```

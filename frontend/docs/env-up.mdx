@@ -1,0 +1,27 @@
+---
+sidebar_position: 3
+---
+# Set Up the Build Environment
+To build STM32 projects, a build environment must be set up. This environment includes the necessary compilers, libraries, and tools required to compile and flash the firmware to the microcontroller. The STM32Tesseract GUI provides a convenient way to set up this environment.
+
+## Prerequisites
+Before setting up the build environment, ensure that you have the following prerequisites:
+- A stable internet connection
+- Sufficient disk space (approximately 1 GB)
+- Administrator privileges
+
+## Steps
+1. Launch `stm32tesseract-gui`.
+2. Navigate to the `Environment` tab.
+3. Click `Up` to initiate the build environment setup.
+4. The program will automatically download the necessary toolchain and configure the environment variables.
+5. ***Restart your computer to activate the new environment variables.***
+
+## FAQ
+### How to troubleshoot download failure?
+If the download fails, check your internet connection and try again. 
+
+### How to configure a proxy server?
+In some enterprise internal networks, you may need to configure a proxy server to download the necessary files.
+
+STM32Tesseract would automatically detect and use the proxy server settings from the system environment variables. `http_proxy` and `https_proxy` are the environment variables that would be used by STM32Tesseract.

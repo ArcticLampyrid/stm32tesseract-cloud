@@ -1,0 +1,8 @@
+{
+  "label": "Installation",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "How to install STM32Tesseract on your computer."
+  }
+}

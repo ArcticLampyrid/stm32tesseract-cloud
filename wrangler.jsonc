@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "stm32tesseract-cloud",
-  "main": "src/index.ts",
+  "main": "backend/src/index.ts",
   "compatibility_date": "2025-02-24",
   "observability": {
     "enabled": true
@@ -22,5 +22,8 @@
   "assets": {
     "directory": "./public/",
     "binding": "ASSETS"
+  },
+  "build": {
+    "command": "pnpm run docusaurus build ./frontend --out-dir ../public"
   }
 }

@@ -1,0 +1,48 @@
+# VSCode
+VSCode is an open-source, cross-platform code editor developed by Microsoft. This guide will walk you through the process of building, running, and debugging generated CMake projects in VSCode.
+
+## Building the Project
+1. Open the project directory in VSCode.
+2. **Install all recommended extensions.**
+3. Open the command palette and execute `CMake: Select Configure Preset`, then select an option (e.g., `gcc`).
+4. Open the command palette again and execute `CMake: Select Build Preset`, then select an option (e.g., `MinSizeRel`).
+5. Execute `CMake: Build` (or press F7) to build the project.
+
+## Running the Project
+### With OpenOCD
+:::tip
+OpenOCD is an open-source tool that provides on-chip programming and debugging support. For most types of adapters (eg. CMSIS-DAP or ST-Link), OpenOCD is a good choice to drive them. However, a significant exclusion is J-Link adapter, which is recommended to use JLink GDB Server for better performance and advanced features.
+:::
+
+1. Edit `openocd.cfg` to configure OpenOCD, see [Configure OpenOCD](/docs/config-openocd) to learn more. The default configuration is for CMSIS-DAP debugger.
+2. Open the command palette and execute `Tasks: Run Task`.
+3. Choose `Download (OpenOCD)` to upload the program to the board.
+
+## Debugging
+### With OpenOCD
+1. Edit `openocd.cfg` to configure OpenOCD, see [Configure OpenOCD](/docs/config-openocd) to learn more. The default configuration is for CMSIS-DAP debugger.
+2. Open the Run and Debug Panel.
+3. Select `Debug (OpenOCD)`.
+
+### With JLink
+1. Check the `.vscode/launch.json` file and correct the path of `serverpath`, eg. 
+   ```json
+   {
+       "servertype": "jlink",
+       "serverpath": "C:/Program Files/SEGGER/JLink/JLinkGDBServerCL.exe"
+   }
+   ```
+2. Open the Run and Debug Panel.
+3. Select `Debug (JLink)`.
+
+### Configure Peripheral View
+SVD files for command devices are pre-configured. Peripheral registers can be viewed in the Run and Debug panel.
+
+Some devices may require manual configuration, download the SVD file from the manufacturer's website and edit `.vscode/launch.json` to use it.
+```json
+{
+    "deviceName": "STM32F401CCUx",
+    // highlight-next-line
+    "svdPath": "${workspaceFolder}/path/to/STM32F401CCUx.svd"
+}
+```

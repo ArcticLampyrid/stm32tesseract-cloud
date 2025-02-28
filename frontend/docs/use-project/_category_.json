@@ -1,0 +1,8 @@
+{
+  "label": "Use Generated Projects",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "How to use the generated projects in various development environments."
+  }
+}

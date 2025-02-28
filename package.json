@@ -1,16 +1,46 @@
 {
 	"name": "stm32tesseract-cloud",
 	"scripts": {
-		"dev": "wrangler dev",
-		"deploy": "wrangler deploy --minify",
-		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+		"docusaurus": "docusaurus",
+		"dev": "wrangler dev --tsconfig ./backend/tsconfig.json",
+		"deploy": "wrangler deploy --tsconfig ./backend/tsconfig.json --minify",
+		"cf-typegen": "wrangler types ./backend/worker-configuration.d.ts --env-interface CloudflareBindings"
 	},
 	"dependencies": {
-		"@octokit/rest": "^21.1.1",
 		"hono": "^4.7.2"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250224.0",
-		"wrangler": "^3.110.0"
+		"@docusaurus/core": "3.7.0",
+		"@docusaurus/module-type-aliases": "3.7.0",
+		"@docusaurus/preset-classic": "3.7.0",
+		"@docusaurus/tsconfig": "3.7.0",
+		"@docusaurus/types": "3.7.0",
+		"@easyops-cn/docusaurus-search-local": "^0.48.5",
+		"@mdx-js/react": "^3.1.0",
+		"@octokit/rest": "^21.1.1",
+		"@types/react": "^19.0.10",
+		"clsx": "^2.1.1",
+		"js-sha1": "^0.7.0",
+		"prism-react-renderer": "^2.4.1",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"typescript": "^5.8.2",
+		"wrangler": "^3.111.0"
+	},
+	"browserslist": {
+		"production": [
+			">0.5%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 3 chrome version",
+			"last 3 firefox version",
+			"last 5 safari version"
+		]
+	},
+	"engines": {
+		"node": ">=18.0"
 	}
 }

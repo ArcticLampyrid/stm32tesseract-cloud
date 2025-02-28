@@ -1,5 +1,9 @@
 # prod
 dist/
+public/
+
+# docusaurus
+.docusaurus
 
 # dev
 .yarn/

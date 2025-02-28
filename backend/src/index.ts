@@ -164,4 +164,19 @@ app.all('/campanula/v1/download/:pkg/:version/:asset', async (c) => {
     }
 })
 
+app.all('/campanula/*', (c) => {
+    return c.json({
+        status: 404,
+        error: 'Not Found'
+    }, 404)
+})
+
+app.all('*', async (c) => {
+    const page404 = await c.env.ASSETS.fetch(new URL("/404", c.req.url));
+    return c.newResponse(page404.body, 404,
+        {
+            'Content-Type': 'text/html',
+        });
+})
+
 export default app
