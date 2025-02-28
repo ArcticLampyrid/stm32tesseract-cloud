@@ -11,3 +11,6 @@ pnpm run dev
 ```
 pnpm run deploy
 ```
+
+## License
+STM32Tesseract is licensed under the [BSD 3-Clause License](./LICENSE.md).
