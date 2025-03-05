@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Installation.link.generated-index.description": {
+    "message": "How to install STM32Tesseract on your computer.",
+    "description": "The generated-index page description for category Installation in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use Generated Projects": {
+    "message": "Use Generated Projects",
+    "description": "The label for category Use Generated Projects in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use Generated Projects.link.generated-index.description": {
+    "message": "How to use the generated projects in various development environments.",
+    "description": "The generated-index page description for category Use Generated Projects in sidebar docSidebar"
+  }
+}

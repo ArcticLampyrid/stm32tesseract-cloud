@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
 
 type FeatureItem = {
   title: string;
@@ -10,35 +11,55 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'CMake Integration',
+    title: translate(
+      {
+        id: 'homepage.features.cmakeIntegration.title',
+        message: 'CMake Integration',
+      },
+    ),
     description: (
-      <>
+      <Translate id="homepage.features.cmakeIntegration.description">
         Effortlessly integrate with CMake to streamline your build process.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Build Environment Setup',
+    title: translate(
+      {
+        id: 'homepage.features.buildEnvironmentSetup.title',
+        message: 'Build Environment Setup',
+      },
+    ),
     description: (
-      <>
+      <Translate id="homepage.features.buildEnvironmentSetup.description">
         Provides a straightforward approach to configuring your build environment.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'VSCode Project Setup',
+    title: translate(
+      {
+        id: 'homepage.features.vscodeProjectSetup.title',
+        message: 'VSCode Project Setup',
+      },
+    ),
     description: (
-      <>
+      <Translate id="homepage.features.vscodeProjectSetup.description">
         Simplifies the process of setting up a project in Visual Studio Code.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'CLion Project Setup',
+    title: translate(
+      {
+        id: 'homepage.features.clionProjectSetup.title',
+        message: 'CLion Project Setup',
+      },
+    ),
     description: (
-      <>
+      <Translate id="homepage.features.clionProjectSetup.description">
         Enables easy configuration of CLion projects.
-      </>
+      </Translate>
     ),
   },
 ];

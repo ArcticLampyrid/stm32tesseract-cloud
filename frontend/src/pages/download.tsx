@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { sha1 } from 'js-sha1';
+import Translate, { translate } from '@docusaurus/Translate';
 
 interface CampanulaPoWEntity {
     prefix: string;
@@ -111,26 +112,33 @@ export default function Download(): ReactNode {
 
     return (
         <Layout
-            title="Download"
+            title={translate({
+                id: 'download.title',
+                message: 'Download'
+            })}
             description={siteConfig.tagline}>
             <div className="container margin-vert--lg">
-                <Heading as="h1">Download</Heading>
-                {loading && <p>Loading files...</p>}
-                {error && <p className="error">Error: {error}</p>}
+                <Heading as="h1"><Translate id="download.title">Download</Translate></Heading>
+                {loading && <p><Translate id="download.loading">Loading files...</Translate></p>}
+                {error && <p className="error"><Translate id="download.error" values={
+                    { error }
+                }>{'Error: {error}'}</Translate></p>}
                 {!loading && !error && (
                     <>
                         <div>
-                            <p>Download the latest version ({pkgInfo.version_name}) of STM32Tesseract below.</p>
+                            <p><Translate id="download.intro" values={
+                                { versionName: pkgInfo.version_name }
+                            }>{'Download the latest version ({versionName}) of STM32Tesseract below.'}</Translate></p>
                         </div>
                         <div className="file-list">
                             {pkgInfo.assets.length === 0 ? (
-                                <p>No files available for download.</p>
+                                <p><Translate id="download.noFiles">No files available for download.</Translate></p>
                             ) : (
                                 <table className="table">
                                     <thead>
                                         <tr>
-                                            <th>Filename</th>
-                                            <th>Action</th>
+                                            <th><Translate id="download.filename">Filename</Translate></th>
+                                            <th><Translate id="download.action">Action</Translate></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,7 +147,7 @@ export default function Download(): ReactNode {
                                                 <td className="file-name">{file.name}</td>
                                                 <td>
                                                     <a className="button button--primary" download={file.name} onClick={(e) => { downloadFile(e.currentTarget, file); }}>
-                                                        Download
+                                                        <Translate id="download.action.download">Download</Translate>
                                                     </a>
                                                 </td>
                                             </tr>

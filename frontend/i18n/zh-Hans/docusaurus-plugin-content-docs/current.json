@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Installation": {
+    "message": "安装",
+    "description": "The label for category Installation in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Installation.link.generated-index.description": {
+    "message": "如何在计算机上安装 STM32Tesseract。",
+    "description": "The generated-index page description for category Installation in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use Generated Projects": {
+    "message": "使用生成的项目",
+    "description": "The label for category Use Generated Projects in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use Generated Projects.link.generated-index.description": {
+    "message": "如何在各种环境中使用生成的项目",
+    "description": "The generated-index page description for category Use Generated Projects in sidebar docSidebar"
+  }
+}

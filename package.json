@@ -2,6 +2,7 @@
 	"name": "stm32tesseract-cloud",
 	"scripts": {
 		"docusaurus": "docusaurus",
+		"write-translations": "docusaurus write-translations ./frontend",
 		"dev": "wrangler dev --tsconfig ./backend/tsconfig.json",
 		"deploy": "wrangler deploy --tsconfig ./backend/tsconfig.json --minify",
 		"cf-typegen": "wrangler types ./backend/worker-configuration.d.ts --env-interface CloudflareBindings"

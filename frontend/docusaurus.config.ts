@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { defaultLocale, locales } from '../i18n.json'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -15,12 +16,9 @@ const config: Config = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
 
-    // Even if you don't use internationalization, you can use this field to set
-    // useful metadata like html lang. For example, if your site is Chinese, you
-    // may want to replace "en" with "zh-Hans".
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en'],
+        defaultLocale,
+        locales
     },
 
     presets: [
@@ -29,10 +27,13 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
+                    editUrl: 'https://github.com/ArcticLampyrid/stm32tesseract-cloud/edit/main/frontend',
+                    editLocalizedFiles: true,
                 },
                 theme: {
                     customCss: './src/css/custom.css',
                 },
+                blog: false
             } satisfies Preset.Options,
         ],
     ],
@@ -62,6 +63,10 @@ const config: Config = {
                     href: 'https://afdian.com/a/alampy',
                     label: 'Sponsor',
                     position: 'left',
+                },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
                 },
                 {
                     href: 'https://github.com/ArcticLampyrid/STM32Tesseract',

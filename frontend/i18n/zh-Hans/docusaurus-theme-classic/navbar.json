@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "STM32Tesseract",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "STM32Tesseract Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Download": {
+    "message": "下载",
+    "description": "Navbar item with label Download"
+  },
+  "item.label.Sponsor": {
+    "message": "赞助",
+    "description": "Navbar item with label Sponsor"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

@@ -2,6 +2,7 @@ import { Octokit, RestEndpointMethodTypes } from '@octokit/rest';
 import { Hono } from 'hono'
 import { proxy } from 'hono/proxy';
 import { verifyPoW, generatePoWPrefix } from './pow';
+import * as i18nConfig from '../../i18n.json'
 const octokit = new Octokit();
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 
@@ -169,6 +170,17 @@ app.all('/campanula/*', (c) => {
         status: 404,
         error: 'Not Found'
     }, 404)
+})
+
+i18nConfig.locales.filter(locale => locale != i18nConfig.defaultLocale).forEach((locale) => {
+    // Localized 404 page
+    app.all(`/${locale}/*`, async (c) => {
+        const page404 = await c.env.ASSETS.fetch(new URL(`/${locale}/404`, c.req.url));
+        return c.newResponse(page404.body, 404,
+            {
+                'Content-Type': 'text/html',
+            });
+    })
 })
 
 app.all('*', async (c) => {

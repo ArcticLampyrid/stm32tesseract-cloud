@@ -7,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import Translate from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -16,17 +17,17 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle"><Translate id='homepage.subtitle'>A utility designed to seamlessly integrate STM32CubeMX-generated code with contemporary IDEs and build systems.</Translate></p>
         <div className={styles.buttons}>
           <Link
             className="button button--outline button--secondary button--lg"
             to="/docs/intro">
-            Docs
+            <Translate id="homepage.docs">Docs</Translate>
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="/download">
-            Download
+            <Translate id="homepage.download">Download</Translate>
           </Link>
         </div>
       </div>

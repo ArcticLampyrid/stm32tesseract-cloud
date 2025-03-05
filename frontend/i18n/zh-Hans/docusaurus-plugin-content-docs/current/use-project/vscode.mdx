@@ -1,0 +1,48 @@
+# VSCode
+VSCode 是一款由 Microsoft 开发的开源、跨平台的代码编辑器。本文将指导您在 VSCode 中构建、运行和调试已生成的 CMake 项目。
+
+## 构建项目
+1. 在 VSCode 中打开项目目录。
+2. **安装所有推荐的扩展。**
+3. 打开命令中心，执行 `CMake: Select Configure Preset`，然后选择一个选项（如 `gcc`）。
+4. 再次打开命令中心，执行 `CMake: Select Build Preset`，然后选择一个选项（如 `MinSizeRel`）。
+5. 执行 `CMake: Build`（或按下 F7）来构建项目。
+
+## 运行项目
+### 使用 OpenOCD
+:::tip
+OpenOCD 是一款提供了片上编程和调试支持的开源工具。对于绝大多数的烧录器（如 CMSIS-DAP 或 ST-Link），OpenOCD 是驱动它们的不错选择。不过，J-Link 适配器是一个例外，建议使用 JLink GDB Server 以获得更好的性能和更高级的功能。
+:::
+
+1. 编辑 `openocd.cfg` 来配置 OpenOCD，详情见[配置 OpenOCD](/docs/config-openocd)。默认的配置是使用 CMSIS-DAP 调试器。
+2. 打开命令中心，执行 `Tasks: Run Task`。
+3. 选择 `Download (OpenOCD)` 以将程序上传到单片机。
+
+## 调试
+### 使用 OpenOCD
+1. 编辑 `openocd.cfg` 来配置 OpenOCD，详情见[配置 OpenOCD](/docs/config-openocd)。默认的配置是使用 CMSIS-DAP 调试器。
+2. 打开 Run and Debug 面板。
+3. 选择 `Debug (OpenOCD)`。
+
+### 使用 JLink
+1. 打开 `.vscode/launch.json`，检查 `serverpath` 等路径是否正确  
+   ```json
+   {
+       "servertype": "jlink",
+       "serverpath": "C:/Program Files/SEGGER/JLink/JLinkGDBServerCL.exe"
+   }
+   ```
+2. 打开 Run and Debug 面板。
+3. 选择 `Debug (JLink)`。
+
+### 配置外设视图
+用于命令设备的 SVD 文件是预先配置好的。外设寄存器的值可以在 Run and Debug 面板中查看。
+
+部分设备可能需要手动配置，只需从 manufacturer 的网站下载 SVD 文件并修改 `.vscode/launch.json` 即可使用。
+```json
+{
+    "deviceName": "STM32F401CCUx",
+    // highlight-next-line
+    "svdPath": "${workspaceFolder}/path/to/STM32F401CCUx.svd"
+}
+```
