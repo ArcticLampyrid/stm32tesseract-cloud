@@ -15,6 +15,7 @@
 		"@docusaurus/core": "3.7.0",
 		"@docusaurus/module-type-aliases": "3.7.0",
 		"@docusaurus/preset-classic": "3.7.0",
+		"@docusaurus/theme-common": "^3.7.0",
 		"@docusaurus/tsconfig": "3.7.0",
 		"@docusaurus/types": "3.7.0",
 		"@easyops-cn/docusaurus-search-local": "^0.48.5",
