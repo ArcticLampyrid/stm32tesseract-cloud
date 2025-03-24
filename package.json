@@ -8,27 +8,27 @@
 		"cf-typegen": "wrangler types ./backend/worker-configuration.d.ts --env-interface CloudflareBindings"
 	},
 	"dependencies": {
-		"hono": "^4.7.2"
+		"hono": "^4.7.5"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20250224.0",
+		"@cloudflare/workers-types": "^4.20250321.0",
 		"@docusaurus/core": "3.7.0",
 		"@docusaurus/module-type-aliases": "3.7.0",
 		"@docusaurus/preset-classic": "3.7.0",
 		"@docusaurus/theme-common": "^3.7.0",
 		"@docusaurus/tsconfig": "3.7.0",
 		"@docusaurus/types": "3.7.0",
-		"@easyops-cn/docusaurus-search-local": "^0.48.5",
+		"@easyops-cn/docusaurus-search-local": "^0.49.1",
 		"@mdx-js/react": "^3.1.0",
 		"@octokit/rest": "^21.1.1",
-		"@types/react": "^19.0.10",
+		"@types/react": "^19.0.12",
 		"clsx": "^2.1.1",
 		"js-sha1": "^0.7.0",
 		"prism-react-renderer": "^2.4.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"typescript": "^5.8.2",
-		"wrangler": "^3.111.0"
+		"wrangler": "^4.4.0"
 	},
 	"browserslist": {
 		"production": [
